@@ -26,8 +26,8 @@ Everything else is a plain HTML tag.
 `bootstrap.min.css` is served free from jsDelivr once this repo is public:
 
 ```html
-<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/ASCrafts/fullstack-lab@main/bootstrap.min.css>
-<script defer src=https://cdn.jsdelivr.net/gh/ASCrafts/fullstack-lab@main/spy.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/ASCrafts/bootstrap@main/bootstrap.min.css>
+<script defer src=https://cdn.jsdelivr.net/gh/ASCrafts/bootstrap@main/spy.js></script>
 ```
 
 Use that instead of the local filename and an `ex*.html` file works on its own,
