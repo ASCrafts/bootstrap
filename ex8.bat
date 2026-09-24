@@ -126,7 +126,7 @@ exit /b 0
 
 :settings
 echo [RUN] Update INSTALLED_APPS
-"%PYTHON%" -c "from pathlib import Path; p=Path('django_project/settings.py'); s=p.read_text(encoding='utf-8'); p.write_text(s if chr(39)+'pages'+chr(39) in s else s.replace('INSTALLED_APPS = [', 'INSTALLED_APPS = [' + chr(10) + '    ' + chr(39) + 'pages' + chr(39) + ',', 1), encoding='utf-8')" >> "%LOG%" 2>&1
+"%PYTHON%" -c "from pathlib import Path; p=Path('django_project/settings.py'); s=p.read_text(encoding='utf-8'); s=s.replace('    '+chr(39)+'pages'+chr(39)+','+chr(10),'').replace('    '+chr(34)+'pages'+chr(34)+','+chr(10),''); s=s.replace('INSTALLED_APPS = [', 'INSTALLED_APPS = ['+chr(10)+'    '+chr(39)+'pages'+chr(39)+',', 1); p.write_text(s, encoding='utf-8')" >> "%LOG%" 2>&1
 if errorlevel 1 exit /b 1
 echo [OK] Update INSTALLED_APPS
 exit /b 0

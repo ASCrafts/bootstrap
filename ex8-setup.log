@@ -1,5 +1,5 @@
 Ex 8 Django Hello World setup
-Started: 24-09-2026 11:36:58.22
+Started: 24-09-2026 12:12:01.90
 [INFO] Python launcher: py -3
 [STEP] Check Python version
 [COMMAND] py -3 --version     
@@ -22,11 +22,39 @@ Requirement already satisfied: pytokens~=0.4.0 in c:\users\elcot\desktop\barath\
 
 [notice] A new release of pip is available: 25.3 -> 26.2.1
 [notice] To update, run: C:\Users\ELCOT\Desktop\barath\bootstrap\helloworld\venv\Scripts\python.exe -m pip install --upgrade pip
-[STEP] Write pages/views.py
-[STEP] Write pages/urls.py
-[STEP] Update project URLs
-[STEP] Add pages to INSTALLED_APPS
-Setup complete: 24-09-2026 11:37:03.54
+Setup complete: 24-09-2026 12:12:07.72
 Watching for file changes with StatReloader
-Not Found: /hello/
-[24/Sep/2026 11:42:18] "GET /hello/ HTTP/1.1" 404 2506
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\ELCOT\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1082, in _bootstrap_inner
+    self._context.run(self.run)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\ELCOT\AppData\Local\Python\pythoncore-3.14-64\Lib\threading.py", line 1024, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ELCOT\Desktop\barath\bootstrap\helloworld\venv\Lib\site-packages\django\utils\autoreload.py", line 83, in wrapper
+    raise e
+  File "C:\Users\ELCOT\Desktop\barath\bootstrap\helloworld\venv\Lib\site-packages\django\utils\autoreload.py", line 66, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ELCOT\Desktop\barath\bootstrap\helloworld\venv\Lib\site-packages\django\core\management\commands\runserver.py", line 124, in inner_run
+    autoreload.raise_last_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ELCOT\Desktop\barath\bootstrap\helloworld\venv\Lib\site-packages\django\utils\autoreload.py", line 90, in raise_last_exception
+    raise _exception[1]
+  File "C:\Users\ELCOT\Desktop\barath\bootstrap\helloworld\venv\Lib\site-packages\django\core\management\__init__.py", line 395, in execute
+    autoreload.check_errors(django.setup)()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ELCOT\Desktop\barath\bootstrap\helloworld\venv\Lib\site-packages\django\utils\autoreload.py", line 83, in wrapper
+    raise e
+  File "C:\Users\ELCOT\Desktop\barath\bootstrap\helloworld\venv\Lib\site-packages\django\utils\autoreload.py", line 66, in wrapper
+    fn(*args, **kwargs)
+    ~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\ELCOT\Desktop\barath\bootstrap\helloworld\venv\Lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ELCOT\Desktop\barath\bootstrap\helloworld\venv\Lib\site-packages\django\apps\registry.py", line 93, in populate
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Application labels aren't unique, duplicates: pages

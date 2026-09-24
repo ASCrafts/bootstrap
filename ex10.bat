@@ -207,7 +207,7 @@ exit /b 0
 echo [RUN] Update INSTALLED_APPS and template DIRS
 echo Command: update db_project\settings.py
 >> "%LOG%" echo [STEP] Update db_project/settings.py
-"%PYTHON%" -c "from pathlib import Path; p=Path('db_project/settings.py'); s=p.read_text(encoding='utf-8'); apps=s if chr(39)+'pages'+chr(39) in s else s.replace('INSTALLED_APPS = [', 'INSTALLED_APPS = [' + chr(10) + '    ' + chr(39) + 'pages' + chr(39) + ',', 1); templates=apps if 'pages/templates' in apps else apps.replace(chr(39)+'DIRS'+chr(39)+': []', chr(39)+'DIRS'+chr(39)+': [BASE_DIR / '+chr(39)+'pages/templates'+chr(39)+']', 1); p.write_text(templates, encoding='utf-8')" >> "%LOG%" 2>&1
+"%PYTHON%" -c "from pathlib import Path; p=Path('db_project/settings.py'); s=p.read_text(encoding='utf-8'); s=s.replace('    '+chr(39)+'pages'+chr(39)+','+chr(10),'').replace('    '+chr(34)+'pages'+chr(34)+','+chr(10),''); s=s.replace('INSTALLED_APPS = [', 'INSTALLED_APPS = ['+chr(10)+'    '+chr(39)+'pages'+chr(39)+',', 1); s=s.replace(chr(39)+'DIRS'+chr(39)+': []', chr(39)+'DIRS'+chr(39)+': [BASE_DIR / '+chr(39)+'pages/templates'+chr(39)+']').replace(chr(34)+'DIRS'+chr(34)+': []', chr(34)+'DIRS'+chr(34)+': [BASE_DIR / '+chr(34)+'pages/templates'+chr(34)+']'); p.write_text(s, encoding='utf-8')" >> "%LOG%" 2>&1
 if errorlevel 1 exit /b 1
 echo [OK] Update settings.py
 exit /b 0
