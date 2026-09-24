@@ -11,7 +11,10 @@ set "PY_LAUNCH="
 >> "%LOG%" echo Started: %date% %time%
 echo Ex 10 Django Student Model setup
 echo Detailed output: ex10-setup.log
+echo Script: %~f0
 echo.
+
+for %%L in (run write_models write_views write_pages_urls write_project_urls write_template settings) do findstr /b /c:":%%L" "%~f0" >nul || goto :script_incomplete
 
 echo Command: netstat -ano | findstr :8000
 netstat -ano | findstr /r /c:":8000 .*LISTENING" >nul
@@ -213,6 +216,14 @@ exit /b 0
 echo.
 echo Setup failed. Read ex10-setup.log for details.
 >> "%LOG%" echo [FAILED] Setup stopped. Review the last command output above.
+pause
+exit /b 1
+
+:script_incomplete
+echo.
+echo [FAILED] This Ex 10 batch file is incomplete or damaged.
+echo Use the complete ex10-setup.bat from the bootstrap folder.
+>> "%LOG%" echo [FAILED] Required batch labels are missing from %~f0
 pause
 exit /b 1
 

@@ -11,7 +11,10 @@ set "PY_LAUNCH="
 >> "%LOG%" echo Started: %date% %time%
 echo Ex 9 Django Template setup
 echo Detailed output: ex9-setup.log
+echo Script: %~f0
 echo.
+
+for %%L in (run write_views write_pages_urls write_project_urls write_template settings) do findstr /b /c:":%%L" "%~f0" >nul || goto :script_incomplete
 
 echo Command: where py
 where py >nul 2>&1
@@ -164,6 +167,14 @@ exit /b 0
 echo.
 echo Setup failed. Read ex9-setup.log for details.
 >> "%LOG%" echo [FAILED] Setup stopped. Review the last command output above.
+pause
+exit /b 1
+
+:script_incomplete
+echo.
+echo [FAILED] This Ex 9 batch file is incomplete or damaged.
+echo Use the complete ex9-setup.bat from the bootstrap folder.
+>> "%LOG%" echo [FAILED] Required batch labels are missing from %~f0
 pause
 exit /b 1
 
