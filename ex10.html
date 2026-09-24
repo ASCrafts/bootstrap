@@ -1,0 +1,46 @@
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/ASCrafts/bootstrap@main/bootstrap.min.css>
+<title>Ex 10 - Django Model</title>
+
+<h2>Django Student Model</h2>
+<p>Create a <b>Student</b> model, insert data into SQLite, display it, and delete it.</p>
+<p>For one-click setup on Windows, double-click <b>ex10-setup.bat</b>.</p>
+
+<h3>URLs</h3>
+<pre>/add_student/
+/view_data/
+/delete_data/</pre>
+
+<h3>pages/models.py</h3>
+<pre>from django.db import models
+
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()
+    email = models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.name</pre>
+
+<h3>pages/views.py</h3>
+<pre>from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Student
+
+def add_student(request):
+    Student.objects.get_or_create(
+        email="ram@example.com",
+        defaults={"name": "Ram", "age": 20},
+    )
+    return HttpResponse("Student added successfully!")
+
+def view_data(request):
+    return render(request, "view_data.html", {"my_data": Student.objects.all()})
+
+def delete_data(request):
+    Student.objects.all().delete()
+    return HttpResponse("All data deleted successfully!")</pre>
+
+<h3>Database commands</h3>
+<pre>python manage.py makemigrations pages
+python manage.py migrate
+python manage.py runserver</pre>

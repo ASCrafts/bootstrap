@@ -1,0 +1,12 @@
+<html>
+<head><title>Students</title></head>
+<body>
+<h1>Students</h1>
+<ul>
+{% for student in my_data %}
+<li>{{ student.name }} - {{ student.age }} - {{ student.email }}</li>
+{% empty %}<li>No students found.</li>
+{% endfor %}
+</ul>
+</body>
+</html>

@@ -1,0 +1,53 @@
+Ex 10 Django Student Model setup
+Started: 24-09-2026 11:49:24.45
+[INFO] Python launcher: py -3
+[STEP] Check Python version
+[COMMAND] py -3 --version     
+Python 3.14.3
+[STEP] Create virtual environment
+[COMMAND] py -3 -m venv venv   
+[STEP] Install Django and Black
+[COMMAND] "venv\Scripts\python.exe" -m pip install django black  
+Requirement already satisfied: django in c:\users\elcot\desktop\barath\bootstrap\db_project\venv\lib\site-packages (6.1.1)
+Requirement already satisfied: black in c:\users\elcot\desktop\barath\bootstrap\db_project\venv\lib\site-packages (26.5.1)
+Requirement already satisfied: asgiref>=3.9.1 in c:\users\elcot\desktop\barath\bootstrap\db_project\venv\lib\site-packages (from django) (3.12.1)
+Requirement already satisfied: sqlparse>=0.5.0 in c:\users\elcot\desktop\barath\bootstrap\db_project\venv\lib\site-packages (from django) (0.6.0)
+Requirement already satisfied: tzdata in c:\users\elcot\desktop\barath\bootstrap\db_project\venv\lib\site-packages (from django) (2026.4)
+Requirement already satisfied: click>=8.0.0 in c:\users\elcot\desktop\barath\bootstrap\db_project\venv\lib\site-packages (from black) (8.5.0)
+Requirement already satisfied: mypy-extensions>=0.4.3 in c:\users\elcot\desktop\barath\bootstrap\db_project\venv\lib\site-packages (from black) (1.1.0)
+Requirement already satisfied: packaging>=22.0 in c:\users\elcot\desktop\barath\bootstrap\db_project\venv\lib\site-packages (from black) (26.3)
+Requirement already satisfied: pathspec>=1.0.0 in c:\users\elcot\desktop\barath\bootstrap\db_project\venv\lib\site-packages (from black) (1.1.1)
+Requirement already satisfied: platformdirs>=2 in c:\users\elcot\desktop\barath\bootstrap\db_project\venv\lib\site-packages (from black) (4.11.12)
+Requirement already satisfied: pytokens~=0.4.0 in c:\users\elcot\desktop\barath\bootstrap\db_project\venv\lib\site-packages (from black) (0.4.1)
+
+[notice] A new release of pip is available: 25.3 -> 26.2.1
+[notice] To update, run: C:\Users\ELCOT\Desktop\barath\bootstrap\db_project\venv\Scripts\python.exe -m pip install --upgrade pip
+[STEP] Write pages/models.py
+[STEP] Write pages/views.py
+[STEP] Write pages/urls.py
+[STEP] Update project URLs
+[STEP] Write pages/templates/view_data.html
+[STEP] Update db_project/settings.py
+[STEP] Create model migrations
+[COMMAND] "venv\Scripts\python.exe" manage.py makemigrations pages    
+No changes detected in app 'pages'
+[STEP] Apply database migrations
+[COMMAND] "venv\Scripts\python.exe" manage.py migrate     
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, pages, sessions
+Running migrations:
+  No migrations to apply.
+Setup complete: 24-09-2026 11:49:32.05
+Watching for file changes with StatReloader
+[24/Sep/2026 11:50:01] "GET /add_student/ HTTP/1.1" 200 27
+[24/Sep/2026 11:50:05] "GET /view_data/ HTTP/1.1" 200 134
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 24, 2026 - 11:49:33
+Django version 6.1.1, using settings 'db_project.settings'
+Starting WSGI development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.1/howto/deployment/

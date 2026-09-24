@@ -1,0 +1,42 @@
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/ASCrafts/bootstrap@main/bootstrap.min.css>
+<title>Ex 9 - Django Template</title>
+
+<h2>Django Template</h2>
+<p>Render <b>hello.html</b> with Django's <b>render()</b> method.</p>
+<p>For one-click setup on Windows, double-click <b>ex9-setup.bat</b>.</p>
+
+<h3>Setup</h3>
+<pre>mkdir hello_world
+cd hello_world
+python -m venv venv
+python -m pip install django black
+python -m django startproject helloworld_project .
+python manage.py startapp pages</pre>
+
+<h3>pages/views.py</h3>
+<pre>from django.shortcuts import render
+
+def hello_world(request):
+    return render(request, "hello.html")</pre>
+
+<h3>pages/urls.py</h3>
+<pre>from django.urls import path
+from pages.views import hello_world
+
+urlpatterns = [
+    path("hello/", hello_world, name="hello_world"),
+]</pre>
+
+<h3>pages/templates/hello.html</h3>
+<pre>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Hello Django!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, World! from Django HTML&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<p>Include <b>pages.urls</b> in the project URLs and set <b>DIRS</b> to <b>pages/templates</b> in settings.py.</p>
+<pre>python manage.py runserver
+# Open http://127.0.0.1:8000/hello/</pre>

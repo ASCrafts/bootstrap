@@ -1,0 +1,37 @@
+Ex 9 Django Template setup
+Started: 24-09-2026 11:44:24.47
+[INFO] Python launcher: py -3
+[STEP] Check Python version
+[COMMAND] py -3 --version     
+Python 3.14.3
+[STEP] Create virtual environment
+[COMMAND] py -3 -m venv venv   
+[STEP] Install Django and Black
+[COMMAND] "venv\Scripts\python.exe" -m pip install django black  
+Requirement already satisfied: django in c:\users\elcot\desktop\barath\bootstrap\hello_world\venv\lib\site-packages (6.1.1)
+Requirement already satisfied: black in c:\users\elcot\desktop\barath\bootstrap\hello_world\venv\lib\site-packages (26.5.1)
+Requirement already satisfied: asgiref>=3.9.1 in c:\users\elcot\desktop\barath\bootstrap\hello_world\venv\lib\site-packages (from django) (3.12.1)
+Requirement already satisfied: sqlparse>=0.5.0 in c:\users\elcot\desktop\barath\bootstrap\hello_world\venv\lib\site-packages (from django) (0.6.0)
+Requirement already satisfied: tzdata in c:\users\elcot\desktop\barath\bootstrap\hello_world\venv\lib\site-packages (from django) (2026.4)
+Requirement already satisfied: click>=8.0.0 in c:\users\elcot\desktop\barath\bootstrap\hello_world\venv\lib\site-packages (from black) (8.5.0)
+Requirement already satisfied: mypy-extensions>=0.4.3 in c:\users\elcot\desktop\barath\bootstrap\hello_world\venv\lib\site-packages (from black) (1.1.0)
+Requirement already satisfied: packaging>=22.0 in c:\users\elcot\desktop\barath\bootstrap\hello_world\venv\lib\site-packages (from black) (26.3)
+Requirement already satisfied: pathspec>=1.0.0 in c:\users\elcot\desktop\barath\bootstrap\hello_world\venv\lib\site-packages (from black) (1.1.1)
+Requirement already satisfied: platformdirs>=2 in c:\users\elcot\desktop\barath\bootstrap\hello_world\venv\lib\site-packages (from black) (4.11.12)
+Requirement already satisfied: pytokens~=0.4.0 in c:\users\elcot\desktop\barath\bootstrap\hello_world\venv\lib\site-packages (from black) (0.4.1)
+
+[notice] A new release of pip is available: 25.3 -> 26.2.1
+[notice] To update, run: C:\Users\ELCOT\Desktop\barath\bootstrap\hello_world\venv\Scripts\python.exe -m pip install --upgrade pip
+[STEP] Write pages/views.py
+[STEP] Write pages/urls.py
+[STEP] Update project URLs
+[STEP] Write pages/templates/hello.html
+[STEP] Update template DIRS
+Setup complete: 24-09-2026 11:44:29.26
+Watching for file changes with StatReloader
+[24/Sep/2026 11:44:32] "GET /hello/ HTTP/1.1" 200 118
+Not Found: /add_student/
+[24/Sep/2026 11:48:18] "GET /add_student/ HTTP/1.1" 404 2554
+Not Found: /view_data/
+[24/Sep/2026 11:48:40] "GET /view_data/ HTTP/1.1" 404 2548
+^C
